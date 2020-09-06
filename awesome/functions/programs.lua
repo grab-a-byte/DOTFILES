@@ -1,7 +1,7 @@
 local awful = require('awful')
 local apps = require('configuration.apps')
 
-function exit_screen_show()
+function show_exit_screen()
     _G.exit_screen_show()
 end
 

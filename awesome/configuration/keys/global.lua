@@ -9,6 +9,8 @@ local apps = require('configuration.apps')
 require('functions.clients')
 require('functions.programs')
 require('functions.utilities')
+require('functions.screen_management')
+require('functions.window_management')
 require('awful.autofocus')
 
 
@@ -26,11 +28,11 @@ local globalKeys =
   awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
 
   -- Default client focus
-  awful.key({modkey},'d', focus_next_client, {description = 'focus next by index', group = 'client'}),
-  awful.key({modkey},'a', focus_previous_client,{description = 'focus previous by index', group = 'client'}),
+  awful.key({modkey}, 'd', focus_next_client, {description = 'focus next by index', group = 'client'}),
+  awful.key({modkey}, 'a', focus_previous_client,{description = 'focus previous by index', group = 'client'}),
   awful.key({modkey}, 'r', toggle_panel,{description = 'show main menu', group = 'awesome'}),
   awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
-  awful.key({altkey},'Tab', switch_next_client, {description = 'Switch to next window', group = 'client'}),
+  awful.key({altkey}, 'Tab', switch_next_client, {description = 'Switch to next window', group = 'client'}),
   awful.key({altkey, 'Shift'},'Tab', switch_last_client, {description = 'Switch to previous window', group = 'client'}),
   
   -- Programs
@@ -57,8 +59,8 @@ local globalKeys =
   awful.key({modkey, 'Shift'}, 'Right', decrease_number_master_clients, {description = 'decrease the number of master clients', group = 'layout'}),
   awful.key({modkey, 'Control'}, 'Left', increase_number_of_columns, {description = 'increase the number of columns', group = 'layout'}),
   awful.key({modkey, 'Control'}, 'Right', decrease_number_of_columns, {description = 'decrease the number of columns', group = 'layout'}),
-  awful.key({modkey},'space', cycle_next_layout, {description = 'select next', group = 'layout'}),
-  awful.key({modkey, 'Shift'}, 'space', cycle_previous_layout, {description = 'select previous', group = 'layout'}),
+  awful.key({modkey},'Space', cycle_next_layout, {description = 'select next', group = 'layout'}),
+  awful.key({modkey, 'Shift'}, 'Space', cycle_previous_layout, {description = 'select previous', group = 'layout'}),
   awful.key({modkey, 'Control'}, 'n', restore_minimized, {description = 'restore minimized', group = 'client'}),
   awful.key({modkey}, 'o', awful.client.movetoscreen, {description = 'move window to next screen', group = 'client'}),
   awful.key({ modkey, "Control" }, "j", focus_next_screen, {description = "focus the next screen", group = "screen"}),
@@ -95,11 +97,11 @@ local globalKeys =
   awful.key({}, 'XF86AudioRaiseVolume', increase_volume, {description = 'volume up', group = 'hotkeys'}),
   awful.key({},'XF86AudioLowerVolume', decrese_volume, {description = 'volume down', group = 'hotkeys'}),
   awful.key({},'XF86AudioMute', toggle_mute, {description = 'toggle mute', group = 'hotkeys'}),
-  awful.key({}, 'XF86PowerOff', exit_screen_show, {description = 'toggle mute', group = 'hotkeys'}),
+  awful.key({}, 'XF86PowerOff', show_exit_screen, {description = 'toggle mute', group = 'hotkeys'}),
 
   -- Custom hotkeys
-  awful.key({modkey}, 'g', open_lutris, {description = 'open lutris', group = 'gaming'}),
-  awful.key({modkey, altKey}, 'm', open_system_monitor, {description = 'open system monitor', group = 'system'})
+  awful.key({modkey}, 'g', open_lutris, {description = 'open lutris', group = 'gaming'})
+  --awful.key({altKey, modkey}, 'm', open_system_monitor, {description = 'open system monitor', group = 'system'})
 )
 
 -- Bind all key numbers to tags.

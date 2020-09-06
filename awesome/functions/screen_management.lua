@@ -1,3 +1,5 @@
+local awful = require('awful')
+
 function focus_previous_screen() 
     awful.screen.focus_relative(-1) 
 end
