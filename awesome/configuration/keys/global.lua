@@ -19,6 +19,7 @@ local globalKeys =
   awful.util.table.join(
   -- Hotkeys
   awful.key({modkey}, 'h', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
+  awful.key({modkey}, 'Escape', show_exit_screen, {description = 'show help', group = 'awesome'}),
 
   -- Tag browsing
   awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
