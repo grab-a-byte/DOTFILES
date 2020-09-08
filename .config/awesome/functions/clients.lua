@@ -25,3 +25,12 @@ function switch_last_client()
       _G.client.focus:raise()
     end
 end
+
+function swap_with_previous_client()
+    awful.client.swap.byidx(-1)
+end
+
+function swap_with_next_client()
+    awful.client.swap.byidx(1)
+end
+    

@@ -1,4 +1,5 @@
 local awful = require('awful')
+local gmath = require("gears.math")
 
 function increase_master_width_factor()
     awful.tag.incmwfact(0.05)
@@ -47,4 +48,20 @@ function restore_minimized()
       _G.client.focus = c
       c:raise()
     end
+end
+
+function move_focused_client_to_next_tag()
+    local tags = awful.screen.focused().tags
+    local tagIndex = awful.screen.focused().selected_tag.index
+    local nextTag = gmath.cycle(#tags, tagIndex+1)
+    awful.client.movetotag(tags[nextTag])
+    awful.tag.viewnext()
+end
+
+function move_focused_client_to_previous_tag()
+    local tags = awful.screen.focused().tags
+    local tagIndex = awful.screen.focused().selected_tag.index
+    local nextTag = gmath.cycle(#tags, tagIndex+1)
+    awful.client.movetotag(tags[nextTag])
+    awful.tag.viewnext()
 end

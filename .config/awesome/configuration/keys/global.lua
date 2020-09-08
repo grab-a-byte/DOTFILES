@@ -22,15 +22,13 @@ local globalKeys =
   awful.key({modkey}, 'Escape', show_exit_screen, {description = 'show help', group = 'awesome'}),
 
   -- Tag browsing
-  awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
-  awful.key({altkey, 'Control'}, 'Up', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({altkey, 'Control'}, 'Down', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
+  awful.key({modkey}, 'Up', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
+  awful.key({modkey}, 'Down', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
 
   -- Default client focus
-  awful.key({modkey}, 'd', focus_next_client, {description = 'focus next by index', group = 'client'}),
-  awful.key({modkey}, 'a', focus_previous_client,{description = 'focus previous by index', group = 'client'}),
+  awful.key({modkey}, 'Right', focus_next_client, {description = 'focus next by index', group = 'client'}),
+  awful.key({modkey}, 'Left', focus_previous_client,{description = 'focus previous by index', group = 'client'}),
   awful.key({modkey}, 'r', toggle_panel,{description = 'show main menu', group = 'awesome'}),
   awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
   awful.key({altkey}, 'Tab', switch_next_client, {description = 'Switch to next window', group = 'client'}),
@@ -56,17 +54,21 @@ local globalKeys =
   awful.key({altkey, 'Shift'}, 'Left', decrease_master_width_factor, {description = 'decrease master width factor', group = 'layout'}),
   awful.key({altkey, 'Shift'}, 'Down', decrease_master_height_factor, {description = 'decrease master height factor', group = 'layout'}),
   awful.key({altkey, 'Shift'}, 'Up', increase_master_height_factor, {description = 'increase master height factor', group = 'layout'}),
-  awful.key({modkey, 'Shift'}, 'Left', increase_number_master_clients, {description = 'increase the number of master clients', group = 'layout'}),
-  awful.key({modkey, 'Shift'}, 'Right', decrease_number_master_clients, {description = 'decrease the number of master clients', group = 'layout'}),
+  --awful.key({modkey, 'Shift'}, 'Left', increase_number_master_clients, {description = 'increase the number of master clients', group = 'layout'}),
+  --awful.key({modkey, 'Shift'}, 'Right', decrease_number_master_clients, {description = 'decrease the number of master clients', group = 'layout'}),
   awful.key({modkey, 'Control'}, 'Left', increase_number_of_columns, {description = 'increase the number of columns', group = 'layout'}),
   awful.key({modkey, 'Control'}, 'Right', decrease_number_of_columns, {description = 'decrease the number of columns', group = 'layout'}),
   awful.key({modkey},'Space', cycle_next_layout, {description = 'select next', group = 'layout'}),
   awful.key({modkey, 'Shift'}, 'Space', cycle_previous_layout, {description = 'select previous', group = 'layout'}),
   awful.key({modkey, 'Control'}, 'n', restore_minimized, {description = 'restore minimized', group = 'client'}),
   awful.key({modkey}, 'o', awful.client.movetoscreen, {description = 'move window to next screen', group = 'client'}),
-  awful.key({ modkey, "Control" }, "j", focus_next_screen, {description = "focus the next screen", group = "screen"}),
-  awful.key({ modkey, "Control" }, "k", focus_previous_screen, {description = "focus the previous screen", group = "screen"}),
-
+  awful.key({modkey, altKey }, "Right", focus_next_screen, {description = "focus the next screen", group = "screen"}),
+  awful.key({modkey, altKey }, "Left", focus_previous_screen, {description = "focus the previous screen", group = "screen"}),
+  awful.key({modkey, "Shift" }, "Right", swap_with_next_client, {description = "swap with next client", group = "client"}),
+  awful.key({modkey, "Shift" }, "Left", swap_with_previous_client, {description = "swap with previous client", group = "client"}),
+  awful.key({modkey, 'Control'}, 'Down', move_focused_client_to_next_tag, {description = 'move focused window to next tag', group = 'layout'}),
+  awful.key({modkey, 'Control'}, 'Up', move_focused_client_to_previous_tag, {description = 'move focused window to previous tag', group = 'layout'}),
+  
   -- Dropdown application
   awful.key({modkey},'z', function() _G.toggle_quake() end, {description = 'dropdown application', group = 'launcher'}),
   -- Widgets popups
