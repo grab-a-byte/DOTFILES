@@ -61,7 +61,7 @@ end
 function move_focused_client_to_previous_tag()
     local tags = awful.screen.focused().tags
     local tagIndex = awful.screen.focused().selected_tag.index
-    local nextTag = gmath.cycle(#tags, tagIndex+1)
+    local nextTag = gmath.cycle(#tags, tagIndex-1)
     awful.client.movetotag(tags[nextTag])
-    awful.tag.viewnext()
+    awful.tag.viewprev()
 end
