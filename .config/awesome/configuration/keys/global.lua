@@ -37,7 +37,7 @@ local globalKeys =
   -- Programs
   awful.key({modkey}, 'l', lock_the_screen, {description = 'Lock the screen', group = 'awesome'}),
   awful.key({modkey}, 'Print', delayed_screenshot, {description = 'Mark an area and screenshot it 10 seconds later (clipboard)', group = 'screenshots (clipboard)'}),
-  awful.key({modkey},'p', screnshot , {description = 'Take a screenshot of your active monitor and copy it to clipboard', group = 'screenshots (clipboard)'}),
+  awful.key({modkey},'p', screenshot , {description = 'Take a screenshot of your active monitor and copy it to clipboard', group = 'screenshots (clipboard)'}),
   awful.key({altkey, 'Shift'}, 'p', region_screenshot, {description = 'Mark an area and screenshot it to your clipboard', group = 'screenshots (clipboard)'}),
   awful.key({modkey}, 'e', open_editor, {description = 'open a text/code editor', group = 'launcher'}),
   awful.key({modkey},'b', open_default_browser, {description = 'open a browser', group = 'launcher'}),

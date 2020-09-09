@@ -37,10 +37,14 @@ return {
     --'blueberry-tray', -- Bluetooth tray icon
     'xfce4-power-manager', -- Power manager
      '/usr/bin/barrier',
-     '~/.local/bin/wallpaper', -- wallpaper-reddit script
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn', -- Spawn "dirty" apps that can linger between sessions
-    'nitrogen --restore' -- Wallpaper
+    'nitrogen --restore &', -- Wallpaper
+    'setxkbmap gb',
+
+    -- setup specifics MODIFY ME AS NEEDE
+    'xrandr --output DVI-D-0 --right-of HDMI-0',
+    'xrandr --output HDMI-0 --primary'
   }
 }
